@@ -5,21 +5,13 @@ import (
 )
 
 func main() {
-	var s string = "Hello Golang"
-	fmt.Println(s)
-	fmt.Printf("%T\n", s)
+	byteA := []byte{72, 73}
+	fmt.Println(byteA)
 
-	var si string = "300"
-	fmt.Println(si)
-	fmt.Printf("%T\n", si)
+	fmt.Println(string(byteA))
 
-	fmt.Println(`test
-	test
-		test
-	`)
+	c := []byte("Hello")
+	fmt.Println(c)
 
-	fmt.Println("\"a\"")
-	fmt.Println(`"`)
-
-	fmt.Println(string(s[0]))
+	fmt.Println(string(c))
 }
