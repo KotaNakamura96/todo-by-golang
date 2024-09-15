@@ -2,10 +2,19 @@ package main
 
 import "fmt"
 
-func CallFunction(f func()) {
-	f ()
+func Later() func (string) string {
+	var store string
+	return func (next string) string {
+		s := store
+		store = next
+		return s
+	}
 }
 
 func main() {
-	CallFunction(func() {fmt.Println("hogehoge")})
+	f := Later()
+
+	fmt.Println(f("Hello"))
+	fmt.Println(f("Golang"))
+	fmt.Println(f("World"))
 }
